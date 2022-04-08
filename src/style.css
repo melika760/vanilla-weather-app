@@ -1,0 +1,57 @@
+body{
+    font-family: "Patrick Hand", cursive
+}
+.btn-color{
+    width: 100px;
+    color: white;
+    max-width: 100%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+h1 {
+    font-size: 35px;
+    font-weight: 100;
+    line-height: 28px;
+    
+  }
+  ul{
+      margin: 0;
+      padding: 0;
+  }
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: rgb(135, 135, 135);
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 16px;
+  }
+  .weather-app {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #dadde1;
+    border-radius: 5px;
+  }
+  .degree{
+      text-align: center;
+
+  }
+  h5{
+      font-size: 100px;
+      padding: 0px;
+      margin-bottom: 0px;
+  }
+  .units {
+    position: relative;
+    font-size: 16px;
+    top: -62px;
+  }
+  img{
+    height: 120px;
+    width: 120px;
+
+  }
