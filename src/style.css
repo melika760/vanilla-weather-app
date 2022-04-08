@@ -1,5 +1,6 @@
 body{
     font-family: "Patrick Hand", cursive;
+
     ;
 }
 .btn-color{
@@ -36,6 +37,7 @@ h1 {
     padding: 20px;
     border: 1px solid #dadde1;
     border-radius: 5px;
+    background-image: linear-gradient(#f33939, #f4f493)
   }
   .degree{
       text-align: center;
