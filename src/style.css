@@ -8,6 +8,9 @@ body{
     color: white;
     max-width: 100%;
 }
+.nightbtn{
+    background-color: blueviolet;
+}
 a{
     text-decoration: none;
     color: black;
@@ -37,7 +40,12 @@ h1 {
     padding: 20px;
     border: 1px solid #dadde1;
     border-radius: 5px;
-    background-image: linear-gradient(#f33939, #f4f493)
+    background-image: linear-gradient(#f33939, #f4f493);
+    
+  }
+  .nightbackground{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
   }
   .degree{
       text-align: center;
@@ -45,8 +53,8 @@ h1 {
   }
   h5{
       font-size: 100px;
-      padding: 0px;
-      margin-bottom: 0px;
+      padding: 10px;
+      margin-bottom: -11px;
   }
   .units {
     position: relative;
@@ -56,5 +64,6 @@ h1 {
   img{
     height: 120px;
     width: 120px;
+margin-bottom: 25px;
 
   }
