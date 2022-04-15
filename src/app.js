@@ -27,6 +27,7 @@ function formatDate(timestamp){
 }
 function showtemp(response){
 let temp = response.data.main.temp;
+celiustemp =response.data.main.temp;
 let temperature = Math.round(temp);
 let currentDegree = document.querySelector("#current-degree")
 let description = document.querySelector("#description")
@@ -47,7 +48,7 @@ function search(city){
     let ApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${Apikey}`;
     axios.get(ApiUrl).then(showtemp);  
 }
-search("london")
+
 
 function submit(event){
     event.preventDefault();
@@ -56,5 +57,23 @@ function submit(event){
     CityName.innerHTML = Cityinput.value;
     search(Cityinput.value)
 }
+function displaytemp(event){
+    event.preventDefault();
+    let currentDegree = document.querySelector("#current-degree");
+    let Farenheitelement = (celiustemp*9)/5+32;
+    currentDegree.innerHTML=Math.round(Farenheitelement)
+}
+function showtempeture(event){
+    event.preventDefault();
+    let currentDegree = document.querySelector("#current-degree");
+    currentDegree.innerHTML=Math.round(celiustemp)
+}
+
  let form = document.querySelector("#form")
  form.addEventListener("submit",submit)
+ search("london")
+let celiustemp = null
+ let frenheittemp = document.querySelector("#Farenheit-link")
+ frenheittemp.addEventListener("click",displaytemp);
+ let celceliustempeture = document.querySelector("#celisus-link")
+ celceliustempeture.addEventListener("click",showtempeture)
