@@ -61,11 +61,15 @@ function displaytemp(event){
     event.preventDefault();
     let currentDegree = document.querySelector("#current-degree");
     let Farenheitelement = (celiustemp*9)/5+32;
+    celceliustempeture.classList.remove("active");
+    frenheittemp.classList.add("active")
     currentDegree.innerHTML=Math.round(Farenheitelement)
 }
 function showtempeture(event){
     event.preventDefault();
     let currentDegree = document.querySelector("#current-degree");
+    celceliustempeture.classList.add("active");
+    frenheittemp.classList.remove("active")
     currentDegree.innerHTML=Math.round(celiustemp)
 }
 

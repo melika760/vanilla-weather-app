@@ -11,10 +11,6 @@ body{
 .nightbtn{
     background-color: blueviolet;
 }
-a{
-    text-decoration: none;
-    color: black;
-}
 h1 {
     font-size: 35px;
     font-weight: 100;
@@ -60,6 +56,16 @@ h1 {
     position: relative;
     font-size: 16px;
     top: -62px;
+  }
+  .units .active{
+    color: black;
+    text-decoration: none;
+    cursor: default;
+  }
+  .units .active:hover{
+    text-decoration: none;
+    cursor: default;
+    
   }
   img{
     height: 120px;
