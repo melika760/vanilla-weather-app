@@ -73,3 +73,7 @@ h1 {
 margin-bottom: 25px;
 
   }
+  .end{
+    max-width: 600px;
+    margin: 10px auto;
+  }
