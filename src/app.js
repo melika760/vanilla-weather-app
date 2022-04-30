@@ -29,7 +29,7 @@ function formatday(timestamp){
     let date = new Date(timestamp* 1000);
     let days = [ "Sun",
     "Mon",
-    "Tues",
+    "Tue",
     "Wed",
     "Thu",
     "Fri",
