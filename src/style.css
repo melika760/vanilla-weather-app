@@ -77,11 +77,11 @@ margin-right: 68px;
   .forecast-weather{
     text-align: center;
     padding: 5px;
-    margin-left: 25px;
+   
   }
   .forecast-weather .item{
    padding: 5px;
-   margin: 2px;
+   margin: 5px;
    
   }
   .forecast-weather img{
