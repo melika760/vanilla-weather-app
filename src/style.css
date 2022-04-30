@@ -7,6 +7,7 @@ body{
     width: 100px;
     color: white;
     max-width: 100%;
+    border: none;
 }
 .nightbtn{
     background-color: blueviolet;
@@ -41,7 +42,8 @@ h1 {
   }
   .nightbackground{
     background: rgb(2,0,36);
-    background: linear-gradient( rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background: linear-gradient( rgb(8, 4, 87) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    color: #dadde1;
   }
   .degree{
       text-align: center;
