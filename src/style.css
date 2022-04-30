@@ -80,7 +80,14 @@ margin-right: 68px;
     margin-left: 25px;
   }
   .forecast-weather .item{
-    margin: 2px;
+   padding: 5px;
+   margin: 2px;
+   
+  }
+  .forecast-weather img{
+    height: 40px;
+    width: 40px;
+
   }
   .forecast-weather .day{
     opacity:0.67;
