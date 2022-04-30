@@ -4,7 +4,7 @@ function formatDate(timestamp){
     if(hours<10){
         hours =`0${hours}`
     }
-    if(hours>18 && hours>00){
+    if(18<hours||hours<06){
         let background = document.querySelector(".weather-app");
         let btnback = document.querySelector(".btn-color")
         btnback.classList.add("nightbtn")
