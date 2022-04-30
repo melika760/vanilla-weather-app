@@ -76,6 +76,8 @@ margin-right: 68px;
   }
   .forecast-weather{
     text-align: center;
+    padding: 5px;
+    margin-left: 25px;
   }
   .forecast-weather .day{
     opacity:0.67;
@@ -92,5 +94,12 @@ margin-right: 68px;
 
   .end{
     max-width: 600px;
-    margin: 10px auto;
+    margin: auto;
+    margin-top:40px;
+    margin-left: 25px;
+
+  }
+  .enda{
+    text-decoration: none;
+    color: #f33939;
   }

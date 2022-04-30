@@ -25,28 +25,51 @@ function formatDate(timestamp){
     return `${day} ${hours}:${minutes}`
 
 }
-function forecast(){
+function formatday(timestamp){
+    let date = new Date(timestamp* 1000);
+    let days = [ "Sun",
+    "Mon",
+    "Tues",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",]
+    return days[date.getDay()];
+
+}
+function Displayforecast(response){
+    let forecast = response.data.daily;
     let forecastelement = document.querySelector("#forecast")
-    let days = ["Thu","Fri","Sat","Sun","Mon"]
     let ForecastHtml = `<div class="row">`
-    days.forEach(function(days){ForecastHtml = ForecastHtml +
-        `  <div class="col-2">
-        <div class="day">${days}</div>
-        <img
-        src="http://openweathermap.org/img/wn/50d@2x.png"
-        alt=""
-        width="70"
-      />
-      <div class="forecast-temp">
-        <span class="max-temp">19°</span> 
-        <span class="min-temp">10°</span>
-      </div>
-      </div>`})
+    forecast.forEach(function(Forecastday,index){
+        if(index<5){     
+            ForecastHtml = ForecastHtml +
+            `  <div class="col-2">
+            <div class="day">${formatday(Forecastday.dt)}</div>
+            <img
+            src="http://openweathermap.org/img/wn/${
+                Forecastday.weather[0].icon
+              }@2x.png"
+            alt=""
+            width="70"
+          />
+          <div class="forecast-temp">
+            <span class="max-temp">${Math.round(Forecastday.temp.max)}°</span> 
+            <span class="min-temp">${Math.round(Forecastday.temp.min)}°</span>
+          </div>
+          </div>`}
+   })
 ForecastHtml = ForecastHtml+`</div>`
 
       forecastelement.innerHTML=ForecastHtml
 
 
+}
+function getForecast(coordinates){
+    let Apikey ="1e9fb88fe728a434cb6268bdccba077b"
+    let ApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${Apikey}`
+    console.log(ApiUrl)
+    axios.get(ApiUrl).then(Displayforecast)
 }
 
 function showtemp(response){
@@ -66,6 +89,7 @@ wind.innerHTML = response.data.wind.speed
 dateElement.innerHTML = formatDate(response.data.dt * 1000)
 iconelement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
 iconelement.setAttribute("alt", response.data.weather[0].description);
+getForecast(response.data.coord)
 }
 function search(city){
     let Apikey = "1e9fb88fe728a434cb6268bdccba077b";
@@ -100,7 +124,6 @@ function showtempeture(event){
  let form = document.querySelector("#form")
  form.addEventListener("submit",submit)
  search("london")
- forecast()
 let celiustemp = null
  let frenheittemp = document.querySelector("#Farenheit-link")
  frenheittemp.addEventListener("click",displaytemp);
