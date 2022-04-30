@@ -4,7 +4,7 @@ function formatDate(timestamp){
     if(hours<10){
         hours =`0${hours}`
     }
-    if(hours>18){
+    if(hours>18 && hours>00){
         let background = document.querySelector(".weather-app");
         let btnback = document.querySelector(".btn-color")
         btnback.classList.add("nightbtn")
@@ -25,6 +25,30 @@ function formatDate(timestamp){
     return `${day} ${hours}:${minutes}`
 
 }
+function forecast(){
+    let forecastelement = document.querySelector("#forecast")
+    let days = ["Thu","Fri","Sat","Sun","Mon"]
+    let ForecastHtml = `<div class="row">`
+    days.forEach(function(days){ForecastHtml = ForecastHtml +
+        `  <div class="col-2">
+        <div class="day">${days}</div>
+        <img
+        src="http://openweathermap.org/img/wn/50d@2x.png"
+        alt=""
+        width="70"
+      />
+      <div class="forecast-temp">
+        <span class="max-temp">19°</span> 
+        <span class="min-temp">10°</span>
+      </div>
+      </div>`})
+ForecastHtml = ForecastHtml+`</div>`
+
+      forecastelement.innerHTML=ForecastHtml
+
+
+}
+
 function showtemp(response){
 let temp = response.data.main.temp;
 celiustemp =response.data.main.temp;
@@ -35,7 +59,7 @@ let humadity = document.querySelector("#humadity")
 let wind = document.querySelector("#wind")
 let dateElement = document.querySelector("#date")
 let iconelement = document.querySelector("#icon")
-currentDegree.innerHTML = temperature;
+currentDegree.innerHTML = temperature +"°";
 description.innerHTML = response.data.weather[0].description;
 humadity.innerHTML = response.data.main.humidity;
 wind.innerHTML = response.data.wind.speed
@@ -76,6 +100,7 @@ function showtempeture(event){
  let form = document.querySelector("#form")
  form.addEventListener("submit",submit)
  search("london")
+ forecast()
 let celiustemp = null
  let frenheittemp = document.querySelector("#Farenheit-link")
  frenheittemp.addEventListener("click",displaytemp);

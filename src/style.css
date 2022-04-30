@@ -67,12 +67,29 @@ h1 {
     cursor: default;
     
   }
-  img{
+  #icon{
     height: 120px;
     width: 120px;
 margin-bottom: 25px;
+margin-right: 68px;
 
   }
+  .forecast-weather{
+    text-align: center;
+  }
+  .forecast-weather .day{
+    opacity:0.67;
+    font-size: 20px;
+  }
+  .forecast-temp{
+    font-size: 17px;
+
+  }
+  .forecast-temp .min-temp{
+    padding:3px;
+    opacity:0.67;
+  }
+
   .end{
     max-width: 600px;
     margin: 10px auto;
